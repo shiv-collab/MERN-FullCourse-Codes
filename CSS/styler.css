@@ -1,0 +1,38 @@
+/* tag element selector*/
+
+/* h1{ 
+    background-color: bisque;
+}
+h2{
+    background-color: cadetblue;
+} */ 
+
+/* id base selection # based selection */
+/* #first{
+    background-color: antiquewhite;
+
+}
+
+#second{
+    background-color: aqua;
+}
+#third{
+    background-color: chartreuse;
+} */
+
+
+/* class based selection */
+/* .forth{
+    background-color: chocolate;
+}
+.fifth{
+    background-color: cadetblue;
+} */
+
+/* Group based selection */
+
+h1,.forth,#third{
+    background-color: crimson;
+}
+
+
