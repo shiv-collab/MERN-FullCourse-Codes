@@ -30,46 +30,96 @@
 
 // Zomato Application
 // Callback hell function 
-function placedorder(callback){
-    console.log("Payment is in progress");
+// function placedorder(callback){
+//     console.log("Payment is in progress");
 
-    setTimeout(()=>{
-        console.log("Payment is received and order get placed");
-        callback();
-    },3000);
-};
+//     setTimeout(()=>{
+//         console.log("Payment is received and order get placed");
+//         callback();
+//     },3000);
+// };
 
-function preparingorder(callback){
-    console.log("your food preparation is started");
+// function preparingorder(callback){
+//     console.log("your food preparation is started");
 
-    setTimeout(()=>{
+//     setTimeout(()=>{
 
-        console.log("your food is now prepared");
-        callback();
-    },3000);
-};
+//         console.log("your food is now prepared");
+//         callback();
+//     },3000);
+// };
 
-function pickupOrder(callback){
-    console.log("Delivery boy is an on way to pickup order");
-    setTimeout(()=>{
-        console.log("I Have picked up the order ");
-        callback();
-    },3000);
-};
+// function pickupOrder(callback){
+//     console.log("Delivery boy is an on way to pickup order");
+//     setTimeout(()=>{
+//         console.log("I Have picked up the order ");
+//         callback();
+//     },3000);
+// };
 
-function deliverOrder(){
-    console.log("I am on way to deliver your order ");
+// function deliverOrder(){
+//     console.log("I am on way to deliver your order ");
 
-    setTimeout(() => {
-        console.log("Order deliver Successfully");
-    },3000);
-};
+//     setTimeout(() => {
+//         console.log("Order deliver Successfully");
+//     },3000);
+// };
 
-placedorder(()=>{
-    preparingorder(()=>{
-        pickupOrder(()=>{
-            deliverOrder();
-        });
-    });
-});
+// placedorder(()=>{
+//     preparingorder(()=>{
+//         pickupOrder(()=>{
+//             deliverOrder();
+//         });
+//     });
+// });
 
+// Promises : 
+
+console.log("Hello World Start");
+//code 
+
+// const p1 = fetch("https://api.github.com/users");
+// // console.log(p1);
+// // Fullfilled , Reject
+
+// const p2 = p1.then((Response)=>{  // Read the promises variable
+//     return Response.json(); // response.json jo hai wo java script me jo data bit me hoga wo  convert hoga object me karta hai  
+// })
+
+// p2.then((Response)=>{
+//     console.log(Response);
+
+// })
+
+fetch("https://api.github.com/users")
+.then((Response)=>{
+    return Response.json();
+})
+
+.then((data)=>{
+    // console.log(data);
+
+    const parent = document.getElementById('first');
+    
+    for(let i=0;i<data.length;i++){
+    const image = document.createElement('img');
+    image.src = data[i].avatar_url;
+    image.style.height = "40px";
+    image.style.width = "40px";
+
+    parent.append(image);
+    }
+
+
+})
+
+
+
+
+
+
+
+
+
+
+console.log("Hello World End ");
